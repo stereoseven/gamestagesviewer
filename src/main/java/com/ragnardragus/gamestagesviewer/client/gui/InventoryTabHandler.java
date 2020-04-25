@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.ragnardragus.gamestagesviewer.GameStagesViewer;
 import com.ragnardragus.gamestagesviewer.client.base.RenderHelper;
-import com.ragnardragus.gamestagesviewer.client.gui.button.GuiButtonInventoryTabV;
-import com.ragnardragus.gamestagesviewer.client.gui.button.GuiButtonInventoryTabV.TabType;
+import com.ragnardragus.gamestagesviewer.client.gui.button.GuiButtonInventoryTab2;
+import com.ragnardragus.gamestagesviewer.client.gui.button.GuiButtonInventoryTab2.TabType;
 import com.ragnardragus.gamestagesviewer.config.ModConfigViewer;
 
 import codersafterdark.reskillable.client.gui.GuiAbilities;
@@ -59,7 +59,7 @@ public class InventoryTabHandler {
 			y += 15;
 		}
 
-		buttonList.add(new GuiButtonInventoryTabV(82934, x, y, TabType.INVENTORY,
+		buttonList.add(new GuiButtonInventoryTab2(82934, x, y, TabType.INVENTORY,
 				gui -> gui instanceof GuiInventory || gui instanceof GuiContainerCreative));
 		if (GameStagesViewer.Reskillable) {
 			buttonList.add(new GuiButtonInventoryTab(82932, x, y + 29, GuiButtonInventoryTab.TabType.SKILLS,
@@ -67,15 +67,15 @@ public class InventoryTabHandler {
 			buttonList.add(new GuiButtonInventoryTab(82933, x, y + 58, GuiButtonInventoryTab.TabType.ABILITIES,
 					gui -> gui instanceof GuiAbilities));
 		}
-		buttonList.add(new GuiButtonInventoryTabV(82934, x, y + ModConfigViewer.stageTabYoffset, TabType.STAGES,
+		buttonList.add(new GuiButtonInventoryTab2(82934, x, y + ModConfigViewer.stageTabYoffset, TabType.STAGES,
 				gui -> gui instanceof GuiStages));
 	}
 
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public static void performAction(GuiScreenEvent.ActionPerformedEvent.Pre event) {
-		if (event.getButton() instanceof GuiButtonInventoryTabV) {
-			GuiButtonInventoryTabV tab = (GuiButtonInventoryTabV) event.getButton();
+		if (event.getButton() instanceof GuiButtonInventoryTab2) {
+			GuiButtonInventoryTab2 tab = (GuiButtonInventoryTab2) event.getButton();
 			Minecraft mc = Minecraft.getMinecraft();
 			EntityPlayer player = mc.player;
 

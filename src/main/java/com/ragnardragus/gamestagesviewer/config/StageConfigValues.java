@@ -26,7 +26,8 @@ public class StageConfigValues {
 			
 			if (splited[0].equals(stageName) && splited.length > 2) {
 				try {
-					return Integer.parseInt(splited[2]);
+					int index = Integer.parseInt(splited[2]);
+					return (index >= 0 && index <= 31) ? index : -1;
 				} catch (NumberFormatException e) {
 					return -1;
 				}

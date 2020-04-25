@@ -13,12 +13,12 @@ import net.minecraft.util.text.TextComponentTranslation;
 
 import java.util.function.Predicate;
 
-public class GuiButtonInventoryTabV extends GuiButton {
+public class GuiButtonInventoryTab2 extends GuiButton {
 
 	private final Predicate<GuiScreen> selectedPred;
 	public final TabType type;
 
-	public GuiButtonInventoryTabV(int id, int x, int y, TabType type, Predicate<GuiScreen> selectedPred) {
+	public GuiButtonInventoryTab2(int id, int x, int y, TabType type, Predicate<GuiScreen> selectedPred) {
 		super(id, x, y, 32, 28, "");
 		this.type = type;
 		this.selectedPred = selectedPred;

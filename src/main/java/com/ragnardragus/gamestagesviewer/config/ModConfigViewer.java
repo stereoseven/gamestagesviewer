@@ -21,7 +21,7 @@ public class ModConfigViewer {
 
 	@LangKey(Reference.MOD_ID + ".config.stagestaby")
 	@Comment({ "Set the Y offset of stages tab" })
-	public static int stageTabYoffset = 56;
+	public static int stageTabYoffset = 26;
 	
 	@LangKey(Reference.MOD_ID + ".config.stagevalues")
 	@Comment({ "Set stage, title and icon index \nExample: stageone:Build Master:0" })

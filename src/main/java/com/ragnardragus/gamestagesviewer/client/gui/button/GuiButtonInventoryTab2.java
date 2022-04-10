@@ -19,7 +19,8 @@ public class GuiButtonInventoryTab2 extends GuiButton {
 	public final TabType type;
 
 	public GuiButtonInventoryTab2(int id, int x, int y, TabType type, Predicate<GuiScreen> selectedPred) {
-		super(id, x, y, 32, 28, "");
+		//default - super(id, x, y, 32, 28, "");
+		super(id, x, y, 9, 20, ""); //compact for JEI Bookmarks fix
 		this.type = type;
 		this.selectedPred = selectedPred;
 	}
@@ -46,12 +47,13 @@ public class GuiButtonInventoryTab2 extends GuiButton {
 			int h = height;
 			
             if (isSelected()) {
-                x += 4;
-                u += w;
+                //x += 4; //tab switch offset
+                u += w; //tab texture switch
             }
 
 			drawTexturedModalRect(x, y, u, v, w, h);
-			drawTexturedModalRect(this.x + 12, y + 6, 176 + type.iconIndex * 16, 28, 16, 16);
+			//prev - drawTexturedModalRect(this.x + 12, y + 6, 176 + type.iconIndex * 16, 28, 16, 16);
+			drawTexturedModalRect(this.x + 26, y + 6, 176 + type.iconIndex * 9, 20, 9, 20);
 			
             if (mouseX > this.x && mouseY > this.y && mouseX < this.x + width && mouseY < this.y + height) {
                 InventoryTabHandler.tooltip = new TextComponentTranslation("gamestagesviewer.tab." + type.name().toLowerCase()).getUnformattedComponentText();
